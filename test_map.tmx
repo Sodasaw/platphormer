@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="32" tileheight="32" infinite="1" nextlayerid="2" nextobjectid="1">
+ <tileset firstgid="1" name="project1" tilewidth="32" tileheight="32" tilecount="35" columns="7">
+  <image source="Legacy Adventure Pack - RUINS/Legacy Adventure Pack - RUINS/Assets/Assets.png" width="224" height="160"/>
+ </tileset>
+ <layer id="1" name="Слой тайлов 1" width="30" height="20">
+  <data encoding="csv">
+   <chunk x="0" y="0" width="16" height="16">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+2,2,2,2,2,2,2,2,2,0,0,0,0,0,0,0,
+16,0,0,0,0,0,21,0,21,0,0,0,0,0,0,0,
+16,0,0,0,0,0,28,0,28,0,0,0,0,0,0,0,
+16,0,0,0,0,0,28,0,28,0,0,0,0,0,0,0,
+16,0,0,0,0,0,0,0,0,0,2,2,0,0,0,0,
+16,0,0,0,0,0,0,0,0,2,9,8,0,0,0,0,
+16,0,0,0,0,0,0,0,2,2,9,0,0,0,0,0,
+16,0,0,0,0,0,0,2,2,9,0,0,0,0,0,0,
+1,2,1,1,1,1,2,2,9,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</chunk>
+  </data>
+ </layer>
+</map>

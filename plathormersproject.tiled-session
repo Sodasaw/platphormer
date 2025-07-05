@@ -1,0 +1,44 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "",
+    "expandedProjectPaths": [
+    ],
+    "file.lastUsedOpenFilter": "Все файлы (*)",
+    "fileStates": {
+        "#Ruins": {
+            "scaleInDock": 1
+        },
+        "test_map.tmx": {
+            "scale": 0.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 212,
+                "y": 1046
+            }
+        },
+        "test_map.tmx#project1": {
+            "scaleInDock": 1
+        },
+        "tileset1.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        }
+    },
+    "last.imagePath": "D:/Python/platphormer/Legacy Adventure Pack - RUINS/Legacy Adventure Pack - RUINS/Assets",
+    "map.fixedSize": true,
+    "map.height": 40,
+    "map.lastUsedFormat": "tmx",
+    "map.width": 60,
+    "openFiles": [
+    ],
+    "project": "plathormersproject.tiled-project",
+    "recentFiles": [
+        "tileset1.tsx",
+        "test_map.tmx"
+    ],
+    "tileset.embedInMap": true,
+    "tileset.lastUsedFormat": "tsx"
+}
