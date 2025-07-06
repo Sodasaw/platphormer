@@ -1,0 +1,19 @@
+{
+  "enemies": [
+    {
+      "name": "Wormy",
+      "start_pos": [5,8],
+      "final_pos": [20,8]
+    },
+    {
+      "name": "Wormy",
+      "start_pos": [6,21],
+      "final_pos": [26,21]
+    },
+    {
+      "name": "Wormy",
+      "start_pos": [43,29],
+      "final_pos": [55,29]
+    }
+  ]
+}

@@ -13,7 +13,6 @@ font = pg.font.Font(None, 30)
 class Ball(pg.sprite.Sprite):
     def __init__(self, player_rect, direction):
         super(Ball, self).__init__()
-
         self.direction = direction
         self.player_rect = player_rect
         self.speed = 10
