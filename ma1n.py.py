@@ -17,16 +17,21 @@ class Ball(pg.sprite.Sprite):
         self.player_rect = player_rect
         self.speed = 10
 
-        self.image = ("sprites/ball.png")
+        self.image = pg.image.load("sprites/ball.png")
         self.image = pg.transform.scale(self.image, (30, 30))
 
         self.rect = self.image.get_rect()
         if self.direction == "right":
-            self.rect.x = self.player_rect.midright
+            self.rect.x = self.player_rect.right
 
         elif self.direction == "left":
-            self.rect.x = self.player_rect.midleft
+            self.rect.x = self.player_rect.left
         self.rect.y = self.player_rect.centery
+    def update(self):
+        if self.direction == 'right':
+            self.rect.x += self.speed
+        else:
+            self.rect.x -= self.speed
 
 
 class Platform(pg.sprite.Sprite):
@@ -293,8 +298,7 @@ class Player(pg.sprite.Sprite):
 
 
         if self.can_move and self.mode != "Hurt":
-            if keys[pg.K_j] and not self.is_attacking:
-                self.attack_mode()
+
 
             if keys[pg.K_SPACE] and not self.is_jumping:
                 self.jump()
@@ -368,6 +372,10 @@ class Game:
         self.player = Player(self.map_tmx_width, self.map_tmx_height)
         self.all_sprites.add(self.player)
 
+        self.ball = Ball(self.player.rect, self.player.direction)
+        self.balls = pg.sprite.Group()
+
+
 
 
         # self.scotty = Scotty(self.map_tmx_width, self.map_tmx_height)
@@ -416,9 +424,14 @@ class Game:
         for event in pg.event.get():
             if event.type == pg.QUIT:
                 return False
+            if event.type == pg.KEYDOWN:
+                if event.key == pg.K_LSHIFT:
+                    self.balls.add(self.ball)
+                    self.all_sprites.add(self.ball)
             if self.mode == "Game over" and event.type == pg.KEYDOWN:
                 self.setup()
         return True
+
 
     def update(self):
         if self.player.hp <= 0:
@@ -432,6 +445,10 @@ class Game:
         self.player.update(self.platforms)
         for enemy in self.enemies.sprites():
             enemy.update(self.platforms)
+        for ball in self.balls.sprites():
+            ball.update()
+        pg.sprite.groupcollide(self.balls, self.enemies, True, True)
+        pg.sprite.groupcollide(self.balls, self.platforms, True, False)
 
         self.camera_x = self.player.rect.x - SCREEN_WIDTH / 2
         self.camera_y = self.player.rect.y - SCREEN_HEIGHT / 2
@@ -442,7 +459,8 @@ class Game:
 
         for sprite in self.all_sprites:
             self.screen.blit(sprite.image, (sprite.rect.x - self.camera_x, sprite.rect.y - self.camera_y))
-
+        for sprite in self.all_sprites:
+            self.screen.blit(sprite.image, (sprite.rect.x - self.camera_x, sprite.rect.y - self.camera_y))
         # HP bar
         pg.draw.rect(self.screen, pg.Color("green"), (10, 10, self.player.hp * 20, 20))
         pg.draw.rect(self.screen, pg.Color("black"), (10, 10, 200, 20), 2)
